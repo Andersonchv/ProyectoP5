@@ -1,22 +1,21 @@
-﻿using MySqlConnector;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+
 
 namespace ProyectoP5.Datos
 {
-    public static class ConexionBD
+    public class ConexionBD
     {
+        /// Crear Conexión
         public static MySqlConnection CrearConexion()
         {
-            string? conexion =
-                Environment.GetEnvironmentVariable("SISTEMA_VENTAS_DB");
-
-            if (string.IsNullOrWhiteSpace(conexion))
-            {
-                throw new InvalidOperationException(
-                    "No se encontró la configuración de conexión a MySQL."
-                );
-            }
-
-            return new MySqlConnection(conexion);
+            MySqlConnection conectar = new MySqlConnection("Server=localhost;Port=3306;Database=sistema_ventas;User ID=root;Password=;");
+            conectar.Open();
+            return conectar;
         }
     }
 }
