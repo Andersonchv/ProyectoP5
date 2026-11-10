@@ -12,9 +12,20 @@
     <PackageReference Include="MySqlConnector" Version="2.6.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="ProyectoP5.Entidades\ProyectoP5.Entidades.csproj" />
-    <ProjectReference Include="ProyectoP5.Negocio\ProyectoP5.Negocio.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<!-- Excluir los archivos de los otros proyectos -->
+		<Compile Remove="ProyectoP5.Datos\**\*.cs" />
+		<Compile Remove="ProyectoP5.Entidades\**\*.cs" />
+		<Compile Remove="ProyectoP5.Negocio\**\*.cs" />
+		<Compile Remove="ProyectoP5.Pruebas\**\*.cs" />
 
+		<!-- Excluir el AssemblyInfo manual de Presentacion -->
+		<Compile Remove="ProyectoP5.Presentacion.AssemblyInfo.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="ProyectoP5.Datos\ProyectoP5.Datos.csproj" />
+	  <ProjectReference Include="ProyectoP5.Entidades\ProyectoP5.Entidades.csproj" />
+	  <ProjectReference Include="ProyectoP5.Negocio\ProyectoP5.Negocio.csproj" />
+	</ItemGroup>	
 </Project>
