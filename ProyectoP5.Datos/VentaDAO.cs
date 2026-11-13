@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MySqlConnector;
+using MySql.Data.MySqlClient;
 using ProyectoP5.Entidades;
 
 namespace ProyectoP5.Datos
@@ -19,8 +19,8 @@ namespace ProyectoP5.Datos
         {
             var clientes = new List<VentaClienteOpcion>();
 
-            using var conexion = VentaConexion.CrearConexion();
-            conexion.Open();
+            using var conexion = ConexionBD.CrearConexion();
+
 
             const string sql = @"
                 SELECT id, nombre
@@ -50,8 +50,8 @@ namespace ProyectoP5.Datos
         {
             var productos = new List<VentaProductoOpcion>();
 
-            using var conexion = VentaConexion.CrearConexion();
-            conexion.Open();
+            using var conexion = ConexionBD.CrearConexion();
+
 
             const string sql = @"
                 SELECT id, codigo, nombre, precio, stock
@@ -132,8 +132,8 @@ namespace ProyectoP5.Datos
                 .OrderBy(d => d.ProductoId)
                 .ToList();
 
-            using var conexion = VentaConexion.CrearConexion();
-            conexion.Open();
+            using var conexion = ConexionBD.CrearConexion();
+
 
             using var transaccion = conexion.BeginTransaction();
 

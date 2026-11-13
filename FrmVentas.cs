@@ -1,11 +1,12 @@
 ﻿
+using ProyectoP5.Entidades;
+using ProyectoP5.Negocio;
+using ProyectoP5.Presentacion;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using ProyectoP5.Entidades;
-using ProyectoP5.Negocio;
 
 namespace ProyectoP5
 {
@@ -36,6 +37,7 @@ namespace ProyectoP5
         private Button btnLimpiar = null!;
         private Button btnRegistrar = null!;
         private Button btnActualizar = null!;
+        private Button btnMenuPrincipal = null!;
 
         public FrmVentas()
         {
@@ -257,13 +259,35 @@ namespace ProyectoP5
                 Anchor = AnchorStyles.Top | AnchorStyles.Right
             };
 
+            // Volver al menú principal.
+            btnMenuPrincipal = new Button
+            {
+                Text = "Volver al menú",
+                Location = new Point(30, 650),
+                Size = new Size(200, 35),
+                BackColor = Color.FromArgb(52, 73, 94),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Flat,
+                Anchor = AnchorStyles.Bottom | AnchorStyles.Left
+            };
+
+            btnMenuPrincipal.FlatAppearance.BorderSize = 0;
+
+            btnMenuPrincipal.Click += (s, e) =>
+            {
+                FrmMenuPrincipal menu = new FrmMenuPrincipal();
+                menu.Show();
+                this.Close();
+            };
+
             // Estado del formulario.
             lblEstado = new Label
             {
                 Text = "Listo para registrar ventas.",
-                Location = new Point(30, 660),
+                Location = new Point(190, 700),
                 Size = new Size(500, 30),
-                ForeColor = Color.DimGray
+                ForeColor = Color.DimGray,
+                Anchor = AnchorStyles.Bottom | AnchorStyles.Left
             };
 
             // Guardar la venta.
@@ -303,7 +327,8 @@ namespace ProyectoP5
                 btnLimpiar,
                 lblTotal,
                 lblEstado,
-                btnRegistrar
+                btnRegistrar,
+                btnMenuPrincipal
             });
 
             ActualizarTabla();

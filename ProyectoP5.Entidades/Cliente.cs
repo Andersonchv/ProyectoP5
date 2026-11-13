@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoP5.Entidades
 {
-    class Cliente
+    public class Cliente
     {
         // Valores
         public int Id { get; set; }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProyectoP5.Entidades;
+using ProyectoP5.Datos;
 
 namespace ProyectoP5.Presentacion
 {

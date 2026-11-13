@@ -1,4 +1,5 @@
 ﻿using ProyectoP5.Entidades;
+using ProyectoP5.Datos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -53,12 +54,12 @@ namespace ProyectoP5.Presentacion
                 return;
             }
 
-            Cliente cliente = new Cliente();
-
-            cliente.Nombre = txtNombre.Text.Trim();
-            cliente.Telefono = txtTelefono.Text.Trim();
-            cliente.Correo = txtCorreo.Text.Trim();
-            cliente.Id = cliente_seleccionado.Id;
+            Cliente cliente = new Cliente(
+                cliente_seleccionado.Id,
+                txtNombre.Text.Trim(),
+                txtTelefono.Text.Trim(),
+                txtCorreo.Text.Trim()
+            );
 
             if (Gestion_usuarios.Actualizar(cliente)> 0) {
 

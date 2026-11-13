@@ -30,6 +30,8 @@
         {
             IblTitulo = new Label();
             panelContenido = new Panel();
+            button2 = new Button();
+            btnMenuPrincipal = new Button();
             btnBuscar = new Button();
             bntLimpiar = new Button();
             btnEliminar = new Button();
@@ -88,6 +90,8 @@
             // panelContenido
             // 
             panelContenido.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            panelContenido.Controls.Add(button2);
+            panelContenido.Controls.Add(btnMenuPrincipal);
             panelContenido.Controls.Add(btnBuscar);
             panelContenido.Controls.Add(bntLimpiar);
             panelContenido.Controls.Add(btnEliminar);
@@ -103,10 +107,34 @@
             panelContenido.TabIndex = 13;
             panelContenido.Paint += panelContenido_Paint;
             // 
+            // button2
+            // 
+            button2.Location = new Point(278, 871);
+            button2.Name = "button2";
+            button2.Size = new Size(8, 8);
+            button2.TabIndex = 19;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // btnMenuPrincipal
+            // 
+            btnMenuPrincipal.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnMenuPrincipal.BackColor = Color.FromArgb(52, 73, 94);
+            btnMenuPrincipal.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnMenuPrincipal.ForeColor = Color.White;
+            btnMenuPrincipal.Location = new Point(26, 910);
+            btnMenuPrincipal.Name = "btnMenuPrincipal";
+            btnMenuPrincipal.Size = new Size(159, 40);
+            btnMenuPrincipal.TabIndex = 18;
+            btnMenuPrincipal.Text = "Volver al menú";
+            btnMenuPrincipal.UseVisualStyleBackColor = false;
+            btnMenuPrincipal.Click += btnMenuPrincipal_Click;
+            // 
             // btnBuscar
             // 
             btnBuscar.BackColor = Color.DodgerBlue;
             btnBuscar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnBuscar.ForeColor = Color.White;
             btnBuscar.Location = new Point(588, 525);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(120, 40);
@@ -118,7 +146,8 @@
             // 
             bntLimpiar.BackColor = Color.DimGray;
             bntLimpiar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            bntLimpiar.Location = new Point(402, 525);
+            bntLimpiar.ForeColor = Color.White;
+            bntLimpiar.Location = new Point(397, 525);
             bntLimpiar.Name = "bntLimpiar";
             bntLimpiar.Size = new Size(120, 40);
             bntLimpiar.TabIndex = 16;
@@ -129,7 +158,8 @@
             // 
             btnEliminar.BackColor = Color.Firebrick;
             btnEliminar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            btnEliminar.Location = new Point(276, 525);
+            btnEliminar.ForeColor = Color.White;
+            btnEliminar.Location = new Point(271, 525);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(120, 40);
             btnEliminar.TabIndex = 15;
@@ -140,7 +170,8 @@
             // 
             bntModificar.BackColor = Color.RoyalBlue;
             bntModificar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            bntModificar.Location = new Point(150, 525);
+            bntModificar.ForeColor = Color.White;
+            bntModificar.Location = new Point(145, 525);
             bntModificar.Name = "bntModificar";
             bntModificar.Size = new Size(120, 40);
             bntModificar.TabIndex = 14;
@@ -153,7 +184,7 @@
             btnGuardar.FlatStyle = FlatStyle.Flat;
             btnGuardar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnGuardar.ForeColor = Color.White;
-            btnGuardar.Location = new Point(26, 525);
+            btnGuardar.Location = new Point(21, 525);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(118, 40);
             btnGuardar.TabIndex = 13;
@@ -179,14 +210,14 @@
             dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvProductos.BackgroundColor = Color.White;
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProductos.Location = new Point(27, 588);
+            dgvProductos.Location = new Point(21, 590);
             dgvProductos.MultiSelect = false;
             dgvProductos.Name = "dgvProductos";
             dgvProductos.ReadOnly = true;
             dgvProductos.RowHeadersVisible = false;
             dgvProductos.RowHeadersWidth = 51;
             dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvProductos.Size = new Size(931, 300);
+            dgvProductos.Size = new Size(937, 300);
             dgvProductos.TabIndex = 8;
             // 
             // grpCaracteristicas
@@ -206,9 +237,9 @@
             grpCaracteristicas.Controls.Add(lblTipoAlimentacion);
             grpCaracteristicas.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
             grpCaracteristicas.ForeColor = Color.Black;
-            grpCaracteristicas.Location = new Point(26, 333);
+            grpCaracteristicas.Location = new Point(21, 341);
             grpCaracteristicas.Name = "grpCaracteristicas";
-            grpCaracteristicas.Size = new Size(932, 175);
+            grpCaracteristicas.Size = new Size(937, 175);
             grpCaracteristicas.TabIndex = 3;
             grpCaracteristicas.TabStop = false;
             grpCaracteristicas.Text = "Características específicas";
@@ -506,13 +537,13 @@
             AutoScaleDimensions = new SizeF(18F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
-            ClientSize = new Size(1082, 953);
+            ClientSize = new Size(1082, 1053);
             Controls.Add(panelContenido);
             Controls.Add(IblTitulo);
             Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Location = new Point(41, 63);
             Margin = new Padding(6);
-            MinimumSize = new Size(1100, 1000);
+            MinimumSize = new Size(1100, 1100);
             Name = "FrmProductos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Gestión de Productos";
@@ -558,14 +589,16 @@
         private Label lblMarca;
         private NumericUpDownRedondeado nudPrecio;
         private Label lblPrecio;
-	private TextBoxRedondeado textNombre;
+	    private TextBoxRedondeado textNombre;
         private Label lblNombre;
-	private TextBoxRedondeado txtCodigo;
+	    private TextBoxRedondeado txtCodigo;
         private Label lblCodigo;
         private Button btnBuscar;
         private Button bntLimpiar;
         private Button btnEliminar;
         private Button bntModificar;
         private Button btnGuardar;
+        private Button button2;
+        private Button btnMenuPrincipal;
     }
 }

@@ -51,6 +51,7 @@ namespace ProyectoP5.Presentacion
             RedondearBoton(btnEliminar, 12);
             RedondearBoton(bntLimpiar, 12);
             RedondearBoton(btnBuscar, 12);
+            RedondearBoton(btnMenuPrincipal, 12);
 
 
             // Ajustar el diseño al cambiar el tamaño de la ventana
@@ -72,8 +73,8 @@ namespace ProyectoP5.Presentacion
             panelContenido.Height = this.ClientSize.Height
                                     - panelContenido.Top - 10;
 
-            // Hacer que la tabla ocupe el espacio restante
-            dgvProductos.Height = panelContenido.ClientSize.Height
+            // Ajustar la tabla dejando espacio para el botón Volver
+            dgvProductos.Height = btnMenuPrincipal.Top
                                   - dgvProductos.Top - 10;
         }
 
@@ -104,7 +105,7 @@ namespace ProyectoP5.Presentacion
             dgvProductos.AutoSizeColumnsMode =
             DataGridViewAutoSizeColumnsMode.Fill;
             dgvProductos.RowHeadersVisible = false;
-	    dgvProductos.ScrollBars = ScrollBars.Vertical;
+            dgvProductos.ScrollBars = ScrollBars.Vertical;
 
             // Diseño visual de la tabla
             dgvProductos.EnableHeadersVisualStyles = false;
@@ -169,7 +170,7 @@ namespace ProyectoP5.Presentacion
 
             txtTipoAlimentacion.Enabled = esAccesorio;
             txtCompatibilidad.Enabled = esAccesorio;
-	    MostrarCaracteristicas();
+            MostrarCaracteristicas();
         }
 
         // Consultar y mostrar productos
@@ -184,7 +185,7 @@ namespace ProyectoP5.Presentacion
                 {
                     dgvProductos.Columns["Id"].Visible = false;
                     dgvProductos.Columns["Activo"].Visible = false;
-		    dgvProductos.Columns["Codigo"].HeaderText = "Código";
+                    dgvProductos.Columns["Codigo"].HeaderText = "Código";
                     dgvProductos.Columns["Descripcion"].HeaderText = "Descripción";
                 }
             }
@@ -652,28 +653,28 @@ namespace ProyectoP5.Presentacion
             boton.FlatAppearance.BorderSize = 0;
         }
 
-	//Redondear txt
-	private void RedondearTextBox(TextBox txt, int radio)
-	{
-    		using (GraphicsPath path = new GraphicsPath())
-    		{
-        int diametro = radio * 2;
+        //Redondear txt
+        private void RedondearTextBox(TextBox txt, int radio)
+        {
+            using (GraphicsPath path = new GraphicsPath())
+            {
+                int diametro = radio * 2;
 
-        path.AddArc(0, 0, diametro, diametro, 180, 90);
-        path.AddArc(txt.Width - diametro - 1, 0,
-                    diametro, diametro, 270, 90);
-        path.AddArc(txt.Width - diametro - 1,
-                    txt.Height - diametro - 1,
-                    diametro, diametro, 0, 90);
-        path.AddArc(0, txt.Height - diametro - 1,
-                    diametro, diametro, 90, 90);
+                path.AddArc(0, 0, diametro, diametro, 180, 90);
+                path.AddArc(txt.Width - diametro - 1, 0,
+                            diametro, diametro, 270, 90);
+                path.AddArc(txt.Width - diametro - 1,
+                            txt.Height - diametro - 1,
+                            diametro, diametro, 0, 90);
+                path.AddArc(0, txt.Height - diametro - 1,
+                            diametro, diametro, 90, 90);
 
-        path.CloseFigure();
+                path.CloseFigure();
 
-        txt.Region?.Dispose();
-        txt.Region = new Region(path);
-    }
-}
+                txt.Region?.Dispose();
+                txt.Region = new Region(path);
+            }
+        }
 
         //Redondeo de tabla
         private void RedondearTabla()
@@ -706,8 +707,8 @@ namespace ProyectoP5.Presentacion
         {
             int radio = 12;
 
-		int ancho = dgvProductos.ClientSize.Width - 2;
-		int alto = dgvProductos.ClientSize.Height - 2;
+            int ancho = dgvProductos.ClientSize.Width - 2;
+            int alto = dgvProductos.ClientSize.Height - 2;
 
             if (ancho <= 0 || alto <= 0)
                 return;
@@ -730,31 +731,39 @@ namespace ProyectoP5.Presentacion
                 }
             }
         }
-	
-private void MostrarCaracteristicas()
-{
-    string categoria = cmbCategoria.SelectedItem?.ToString() ?? "";
 
-    bool esAudio = categoria == "Audio";
-    bool esCable = categoria == "Cable";
-    bool esAccesorio = categoria == "Accesorio";
+        //Netodo para ocultar botnes de caracteristicas especiales
+        private void MostrarCaracteristicas()
+        {
+            string categoria = cmbCategoria.SelectedItem?.ToString() ?? "";
 
-    // Características de Audio
-    cmbTipoConexion.Visible = esAudio;
-    lblTipoConexion.Visible = esAudio;
-    chkMicrofono.Visible = esAudio;
+            bool esAudio = categoria == "Audio";
+            bool esCable = categoria == "Cable";
+            bool esAccesorio = categoria == "Accesorio";
 
-    // Características de Cable
-    nudMetros.Visible = esCable;
-    lblMetros.Visible = esCable;
-    txtConectores.Visible = esCable;
-    lblConectores.Visible = esCable;
+            // Características de Audio
+            cmbTipoConexion.Visible = esAudio;
+            lblTipoConexion.Visible = esAudio;
+            chkMicrofono.Visible = esAudio;
 
-    // Características de Accesorio
-    txtTipoAlimentacion.Visible = esAccesorio;
-    lblTipoAlimentacion.Visible = esAccesorio;
-    txtCompatibilidad.Visible = esAccesorio;
-    lblCompatibilidad.Visible = esAccesorio;
-}
+            // Características de Cable
+            nudMetros.Visible = esCable;
+            lblMetros.Visible = esCable;
+            txtConectores.Visible = esCable;
+            lblConectores.Visible = esCable;
+
+            // Características de Accesorio
+            txtTipoAlimentacion.Visible = esAccesorio;
+            lblTipoAlimentacion.Visible = esAccesorio;
+            txtCompatibilidad.Visible = esAccesorio;
+            lblCompatibilidad.Visible = esAccesorio;
+        }
+
+        private void btnMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            FrmMenuPrincipal menu = new FrmMenuPrincipal();
+            menu.Show();
+            this.Close();
+        }
     }
 }

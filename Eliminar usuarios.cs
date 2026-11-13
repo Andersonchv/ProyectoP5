@@ -1,4 +1,6 @@
-﻿using ProyectoP5.Entidades;
+﻿using MySqlX.XDevAPI;
+using ProyectoP5.Datos;
+using ProyectoP5.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -60,8 +62,7 @@ namespace ProyectoP5.Presentacion
                 return;
             }
 
-            Cliente cliente = new Cliente();
-            cliente.Id = idSeleccionado;
+            Cliente cliente = new Cliente(idSeleccionado, "", "", "");
 
             int resultado = Gestion_usuarios.Eliminar(cliente);
 

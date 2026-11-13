@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using MySqlConnector;
+using MySql.Data.MySqlClient;
 using ProyectoP5.Entidades;
 
 namespace ProyectoP5.Datos
@@ -32,8 +32,6 @@ namespace ProyectoP5.Datos
 
             using (MySqlConnection conexion = ConexionBD.CrearConexion())
             {
-                conexion.Open();
-
                 using (MySqlCommand comando =
                 new MySqlCommand(consulta, conexion))
                 using (MySqlDataReader reader = comando.ExecuteReader())
@@ -106,7 +104,6 @@ namespace ProyectoP5.Datos
         {
             using (MySqlConnection conexion = ConexionBD.CrearConexion())
             {
-                conexion.Open();
 
                 using (MySqlTransaction transaccion = conexion.BeginTransaction())
                 {
@@ -222,7 +219,7 @@ namespace ProyectoP5.Datos
         {
             using (MySqlConnection conexion = ConexionBD.CrearConexion())
             {
-                conexion.Open();
+
                 using (MySqlTransaction transaccion = conexion.BeginTransaction())
             {
                 try
@@ -330,7 +327,6 @@ namespace ProyectoP5.Datos
         {
             using (MySqlConnection conexion = ConexionBD.CrearConexion())
             {
-                conexion.Open();
                 string consulta = @"
                 UPDATE productos
                 SET activo = 0
