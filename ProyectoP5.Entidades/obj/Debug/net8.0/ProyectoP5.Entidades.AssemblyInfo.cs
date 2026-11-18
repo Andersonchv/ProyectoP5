@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProyectoP5.Entidades")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d9781d5046d5410f1f9ca5227a3a300ac8b78425")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9cb9e2d309265e97bf2da0ce1417bc77b836e607")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProyectoP5.Entidades")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProyectoP5.Entidades")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
