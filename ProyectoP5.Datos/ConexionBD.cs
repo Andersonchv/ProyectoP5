@@ -13,7 +13,7 @@ namespace ProyectoP5.Datos
         /// Crear Conexión
         public static MySqlConnection CrearConexion()
         {
-            MySqlConnection conectar = new MySqlConnection("Server=localhost;Port=3306;Database=sistema_ventas;User ID=root;Password=Silvia1512@;");
+            MySqlConnection conectar = new MySqlConnection("Server=localhost;Port=3306;Database=sistema_ventas;User ID=root;Password=");
             conectar.Open();
             return conectar;
         }

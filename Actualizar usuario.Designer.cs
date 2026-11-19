@@ -42,6 +42,9 @@
             button2 = new Button();
             button3 = new Button();
             dgvbuscar = new DataGridView();
+            button4 = new Button();
+            comboBox1 = new ComboBox();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvbuscar).BeginInit();
             SuspendLayout();
             // 
@@ -58,7 +61,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(28, 351);
+            label2.Location = new Point(713, 98);
             label2.Name = "label2";
             label2.Size = new Size(17, 15);
             label2.TabIndex = 1;
@@ -67,7 +70,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(162, 351);
+            label3.Location = new Point(713, 145);
             label3.Name = "label3";
             label3.Size = new Size(51, 15);
             label3.TabIndex = 2;
@@ -76,7 +79,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(293, 351);
+            label4.Location = new Point(711, 189);
             label4.Name = "label4";
             label4.Size = new Size(53, 15);
             label4.TabIndex = 3;
@@ -85,7 +88,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(398, 351);
+            label5.Location = new Point(713, 243);
             label5.Name = "label5";
             label5.Size = new Size(105, 15);
             label5.TabIndex = 4;
@@ -100,37 +103,37 @@
             // 
             // txtID
             // 
-            txtID.Location = new Point(17, 369);
+            txtID.Location = new Point(713, 116);
             txtID.Name = "txtID";
-            txtID.Size = new Size(75, 23);
+            txtID.Size = new Size(127, 23);
             txtID.TabIndex = 7;
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(143, 369);
+            txtNombre.Location = new Point(713, 163);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(75, 23);
+            txtNombre.Size = new Size(127, 23);
             txtNombre.TabIndex = 8;
             // 
             // txtTelefono
             // 
-            txtTelefono.Location = new Point(281, 369);
+            txtTelefono.Location = new Point(713, 207);
             txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new Size(75, 23);
+            txtTelefono.Size = new Size(127, 23);
             txtTelefono.TabIndex = 9;
             // 
             // txtCorreo
             // 
-            txtCorreo.Location = new Point(415, 369);
+            txtCorreo.Location = new Point(713, 261);
             txtCorreo.Name = "txtCorreo";
-            txtCorreo.Size = new Size(75, 23);
+            txtCorreo.Size = new Size(127, 23);
             txtCorreo.TabIndex = 10;
             // 
             // button1
             // 
-            button1.Location = new Point(713, 60);
+            button1.Location = new Point(713, 53);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(127, 35);
             button1.TabIndex = 11;
             button1.Text = "Buscar ";
             button1.UseVisualStyleBackColor = true;
@@ -138,9 +141,9 @@
             // 
             // button2
             // 
-            button2.Location = new Point(649, 369);
+            button2.Location = new Point(469, 367);
             button2.Name = "button2";
-            button2.Size = new Size(75, 23);
+            button2.Size = new Size(109, 50);
             button2.TabIndex = 12;
             button2.Text = "Actualizar";
             button2.UseVisualStyleBackColor = true;
@@ -148,9 +151,9 @@
             // 
             // button3
             // 
-            button3.Location = new Point(546, 369);
+            button3.Location = new Point(17, 12);
             button3.Name = "button3";
-            button3.Size = new Size(75, 23);
+            button3.Size = new Size(73, 27);
             button3.TabIndex = 13;
             button3.Text = "Regresar";
             button3.UseVisualStyleBackColor = true;
@@ -161,16 +164,45 @@
             dgvbuscar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvbuscar.Location = new Point(17, 94);
             dgvbuscar.Name = "dgvbuscar";
-            dgvbuscar.Size = new Size(707, 254);
+            dgvbuscar.Size = new Size(690, 254);
             dgvbuscar.TabIndex = 14;
             dgvbuscar.CellClick += dgvbuscar_CellClick;
-            dgvbuscar.CellContentClick += dgvbuscar_CellContentClick;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(178, 367);
+            button4.Name = "button4";
+            button4.Size = new Size(109, 50);
+            button4.TabIndex = 15;
+            button4.Text = "Limpiar ";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "1-ADMINISTRADOR", "2-VENDEDOR", "3-BODEGUERO", "4-CLIENTE" });
+            comboBox1.Location = new Point(716, 304);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(124, 23);
+            comboBox1.TabIndex = 16;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(716, 286);
+            label6.Name = "label6";
+            label6.Size = new Size(24, 15);
+            label6.TabIndex = 17;
+            label6.Text = "Rol";
             // 
             // Actualizar_usuario
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            AutoScaleMode = AutoScaleMode.None;
+            ClientSize = new Size(851, 447);
+            Controls.Add(label6);
+            Controls.Add(comboBox1);
+            Controls.Add(button4);
             Controls.Add(dgvbuscar);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -186,7 +218,9 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "Actualizar_usuario";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Actualizar_usuario";
+            FormClosed += Actualizar_usuario_FormClosed;
             Load += Actualizar_usuario_Load;
             ((System.ComponentModel.ISupportInitialize)dgvbuscar).EndInit();
             ResumeLayout(false);
@@ -209,5 +243,8 @@
         private Button button2;
         private Button button3;
         private DataGridView dgvbuscar;
+        private Button button4;
+        private ComboBox comboBox1;
+        private Label label6;
     }
 }

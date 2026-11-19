@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ProyectoP5.Entidades;
 using ProyectoP5.Datos;
+using ProyectoP5.Entidades;
 
 namespace ProyectoP5.Presentacion
 {
@@ -28,7 +28,7 @@ namespace ProyectoP5.Presentacion
         {
             Gestiondeusuarios gestiondeusuarios = new Gestiondeusuarios();
             gestiondeusuarios.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -45,6 +45,17 @@ namespace ProyectoP5.Presentacion
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+            dgvBuscar.DataSource = Gestion_usuarios.Obtenertodos();
+        }
+
+        private void Consultar_usuario_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

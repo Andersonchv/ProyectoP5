@@ -6,23 +6,26 @@ using System.Threading.Tasks;
 
 namespace ProyectoP5.Entidades
 {
-    public class Cliente
+   public  class Cliente : Usuario
     {
-        // Valores
-        public int Id { get; set; }
-
-        public string Nombre { get; set; } = string.Empty;
-
-        public string Telefono { get; set; } = string.Empty;
-
-        public string Correo { get; set; } = string.Empty;
-
-        public Cliente(int id, string nombre, string telefono, string correo) 
+        public string Apellido { get; set; } = string.Empty;
+        public int Edad { get; set; } = 0;
+        public int Credito { get; set; } = 0;
+     
+        public Cliente(int id,string nombre,string apellido, string telefono, int edad, string correo, int Credito)
         {
-            Id = id;
-            Nombre = nombre;
-            Telefono = telefono;
-            Correo = correo;
+            this.Id = id;
+            this.Nombre = nombre;
+            this.Apellido = apellido;
+            this.Telefono = telefono;
+            this.Correo = correo;
+            this.Edad = edad;
+            this.Credito = Credito;
+        }
+
+        public override void permisos()
+        {
+            //permisos de cliente
         }
     }
 }

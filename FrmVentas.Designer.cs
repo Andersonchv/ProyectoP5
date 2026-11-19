@@ -37,6 +37,7 @@ namespace ProyectoP5
             ClientSize = new Size(459, 459);
             Name = "FrmVentas";
             Text = "Registro de Ventas";
+            Load += FrmVentas_Load;
             ResumeLayout(false);
         }
     }

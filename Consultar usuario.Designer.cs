@@ -33,6 +33,7 @@
             button2 = new Button();
             label1 = new Label();
             dgvBuscar = new DataGridView();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvBuscar).BeginInit();
             SuspendLayout();
             // 
@@ -46,9 +47,9 @@
             // 
             // button1
             // 
-            button1.Location = new Point(696, 72);
+            button1.Location = new Point(696, 73);
             button1.Name = "button1";
-            button1.Size = new Size(92, 23);
+            button1.Size = new Size(75, 23);
             button1.TabIndex = 2;
             button1.Text = "Buscar";
             button1.UseVisualStyleBackColor = true;
@@ -58,7 +59,7 @@
             // 
             button2.Location = new Point(12, 12);
             button2.Name = "button2";
-            button2.Size = new Size(75, 23);
+            button2.Size = new Size(123, 33);
             button2.TabIndex = 3;
             button2.Text = "Volver ";
             button2.UseVisualStyleBackColor = true;
@@ -79,22 +80,34 @@
             dgvBuscar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvBuscar.Location = new Point(12, 116);
             dgvBuscar.Name = "dgvBuscar";
-            dgvBuscar.Size = new Size(776, 332);
+            dgvBuscar.Size = new Size(678, 332);
             dgvBuscar.TabIndex = 7;
             dgvBuscar.CellContentClick += dgvBuscar_CellContentClick;
             // 
+            // button3
+            // 
+            button3.Location = new Point(777, 73);
+            button3.Name = "button3";
+            button3.Size = new Size(75, 23);
+            button3.TabIndex = 8;
+            button3.Text = "Limpiar";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // Consultar_usuario
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            AutoScaleMode = AutoScaleMode.None;
+            ClientSize = new Size(868, 450);
+            Controls.Add(button3);
             Controls.Add(dgvBuscar);
             Controls.Add(label1);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(textBox1);
             Name = "Consultar_usuario";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Consultar usuario";
+            FormClosed += Consultar_usuario_FormClosed;
             Load += Consultar_usuario_Load;
             ((System.ComponentModel.ISupportInitialize)dgvBuscar).EndInit();
             ResumeLayout(false);
@@ -107,5 +120,6 @@
         private Button button2;
         private Label label1;
         private DataGridView dgvBuscar;
+        private Button button3;
     }
 }

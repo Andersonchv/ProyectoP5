@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -37,7 +38,13 @@
             button1 = new Button();
             button2 = new Button();
             label5 = new Label();
+            txtPerfil = new Label();
+            comboBox1 = new ComboBox();
+            conexionBDBindingSource = new BindingSource(components);
+            button3 = new Button();
+            ((System.ComponentModel.ISupportInitialize)conexionBDBindingSource).BeginInit();
             SuspendLayout();
+            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -50,7 +57,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(92, 111);
+            label3.Location = new Point(249, 76);
             label3.Name = "label3";
             label3.Size = new Size(53, 15);
             label3.TabIndex = 1;
@@ -59,11 +66,12 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(92, 150);
+            label4.Location = new Point(416, 76);
             label4.Name = "label4";
             label4.Size = new Size(108, 15);
             label4.TabIndex = 2;
             label4.Text = "Correo electrónico ";
+            // 
             // textBox2
             // 
             textBox2.Location = new Point(91, 93);
@@ -73,23 +81,23 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(92, 129);
+            textBox3.Location = new Point(249, 94);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(100, 23);
             textBox3.TabIndex = 4;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(91, 168);
+            textBox4.Location = new Point(416, 94);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(100, 23);
             textBox4.TabIndex = 5;
             // 
             // button1
             // 
-            button1.Location = new Point(249, 284);
+            button1.Location = new Point(28, 22);
             button1.Name = "button1";
-            button1.Size = new Size(126, 48);
+            button1.Size = new Size(70, 24);
             button1.TabIndex = 6;
             button1.Text = "Regresar";
             button1.UseVisualStyleBackColor = true;
@@ -97,7 +105,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(425, 284);
+            button2.Location = new Point(416, 289);
             button2.Name = "button2";
             button2.Size = new Size(126, 48);
             button2.TabIndex = 7;
@@ -115,11 +123,45 @@
             label5.Text = "REGISTRO DE USUARIO";
             label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // txtPerfil
+            // 
+            txtPerfil.AutoSize = true;
+            txtPerfil.Location = new Point(575, 72);
+            txtPerfil.Name = "txtPerfil";
+            txtPerfil.Size = new Size(34, 15);
+            txtPerfil.TabIndex = 9;
+            txtPerfil.Text = "Perfil";
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "1-ADMINISTRADOR", "2-VENDEDOR", "3-BODEGUERO", "4-CLIENTE" });
+            comboBox1.Location = new Point(578, 93);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(104, 23);
+            comboBox1.TabIndex = 10;
+            // 
+            // conexionBDBindingSource
+            // 
+            conexionBDBindingSource.DataSource = typeof(Datos.ConexionBD);
+            // 
+            // button3
+            // 
+            button3.Location = new Point(249, 289);
+            button3.Name = "button3";
+            button3.Size = new Size(126, 48);
+            button3.TabIndex = 11;
+            button3.Text = "Limpiar";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // Registrodeusuarios
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(800, 450);
+            Controls.Add(button3);
+            Controls.Add(comboBox1);
+            Controls.Add(txtPerfil);
             Controls.Add(label5);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -130,8 +172,11 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Name = "Registrodeusuarios";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "REGISTRO DE USUARIOS ";
+            FormClosed += Registrodeusuarios_FormClosed;
             Load += Form2_Load;
+            ((System.ComponentModel.ISupportInitialize)conexionBDBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -147,5 +192,9 @@
         private Button button1;
         private Button button2;
         private Label label5;
+        private Label txtPerfil;
+        private ComboBox comboBox1;
+        private BindingSource conexionBDBindingSource;
+        private Button button3;
     }
 }

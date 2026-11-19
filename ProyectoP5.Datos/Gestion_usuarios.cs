@@ -1,136 +1,136 @@
 ﻿
-using ProyectoP5.Entidades;
 using MySql.Data.MySqlClient;
+using ProyectoP5.Entidades;
+
 
 namespace ProyectoP5.Datos
 {
     public class Gestion_usuarios
     {
-        public static int Agregar(Cliente cliente)
+        public static int Agregar(Usuario usuario)
         {
             using MySqlConnection conexion = ConexionBD.CrearConexion();
             using MySqlCommand comando = new MySqlCommand(
-                "INSERT INTO clientes (nombre, telefono, correo, activo) " +
-                "VALUES (@nombre, @telefono, @correo, @activo)",
+                "INSERT INTO usuarios (nombre, telefono, correo, activo, rol) " +
+                "VALUES (@nombre, @telefono, @correo, @activo, @rol)",
                 conexion);
 
-            comando.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = cliente.Nombre;
-            comando.Parameters.Add("@telefono", MySqlDbType.VarChar).Value = cliente.Telefono;
-            comando.Parameters.Add("@correo", MySqlDbType.VarChar).Value = cliente.Correo;
+            comando.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = usuario.Nombre;
+            comando.Parameters.Add("@telefono", MySqlDbType.VarChar).Value = usuario.Telefono;
+            comando.Parameters.Add("@correo", MySqlDbType.VarChar).Value = usuario.Correo;
             comando.Parameters.Add("@activo", MySqlDbType.Int32).Value = 1;
+            comando.Parameters.Add("@rol", MySqlDbType.VarChar).Value = usuario.Rol;
 
             return comando.ExecuteNonQuery();
         }
-
-        public static List<Cliente> Obtenertodos()
+        public static List<Usuario> Obtenertodos()
         {
-            List<Cliente> lista = new List<Cliente>();
+            List<Usuario> lista = new List<Usuario>();
 
-            string sql = "SELECT id, nombre, telefono, correo, activo FROM clientes WHERE activo = 1";
+            String sql = "SELECT id, nombre, telefono, correo, activo, rol FROM usuarios WHERE activo = 1";
 
-            using MySqlConnection conexion = ConexionBD.CrearConexion();
-            using MySqlCommand comando = new MySqlCommand(sql, conexion);
-            using MySqlDataReader reader = comando.ExecuteReader();
+            MySqlConnection conexion = ConexionBD.CrearConexion();
+            MySqlCommand comando = new MySqlCommand(sql, conexion);
 
+            MySqlDataReader reader = comando.ExecuteReader();
             while (reader.Read())
             {
-                Cliente cliente = new Cliente(
-                    reader.GetInt32(0),
-                    reader.GetString(1),
-                    reader.GetString(2),
-                    reader.GetString(3)
-                );
+                Usuario usuario = new Usuario();
+                usuario.Id = reader.GetInt32(0);
+                usuario.Nombre = reader.GetString(1);
+                usuario.Telefono = reader.GetString(2);
+                usuario.Correo = reader.GetString(3);
+                usuario.Rol = reader.GetString(5);
 
-                lista.Add(cliente);
+                lista.Add(usuario);
+            }
+            return lista;
+        }
+
+        public static List<Usuario> Buscar(string texto)
+        {
+            List<Usuario> lista = new List<Usuario>();
+
+            string sql = @"SELECT id, nombre, telefono, correo, activo, rol
+                   FROM usuarios
+                   WHERE activo = 1
+                     AND (CAST(id AS CHAR) = @exacto
+                      OR nombre   LIKE @parcial
+                      OR telefono LIKE @parcial
+                      OR correo   LIKE @parcial) 
+                      OR rol LIKE @parcial";
+
+            using (MySqlConnection conexion = ConexionBD.CrearConexion())
+            using (MySqlCommand comando = new MySqlCommand(sql, conexion))
+            {
+                comando.Parameters.AddWithValue("@exacto", texto);
+                comando.Parameters.AddWithValue("@parcial", "%" + texto + "%");
+
+                if (conexion.State != System.Data.ConnectionState.Open)
+                    conexion.Open();
+
+                using (MySqlDataReader reader = comando.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Usuario usuario = new Usuario();
+                        usuario.Id = reader.GetInt32(0);
+                        usuario.Nombre = reader.GetString(1);
+                        usuario.Telefono = reader.GetString(2);
+                        usuario.Correo = reader.GetString(3);
+                        usuario.Rol = reader.GetString(5);
+
+                        lista.Add(usuario);
+                    }
+                }
             }
 
             return lista;
         }
-
-        public static List<Cliente> Buscar(string texto)
+        public static Usuario ObtenerUsuario(int Id)
         {
-            List<Cliente> lista = new List<Cliente>();
+            Usuario usuario = new Usuario();
+            MySqlConnection conexion = ConexionBD.CrearConexion(); 
 
-            string sql = @"SELECT id, nombre, telefono, correo, activo
-                           FROM clientes
-                           WHERE activo = 1
-                           AND (CAST(id AS CHAR) = @exacto
-                           OR nombre LIKE @parcial
-                           OR telefono LIKE @parcial
-                           OR correo LIKE @parcial)";
-
-            using MySqlConnection conexion = ConexionBD.CrearConexion();
-            using MySqlCommand comando = new MySqlCommand(sql, conexion);
-
-            comando.Parameters.AddWithValue("@exacto", texto);
-            comando.Parameters.AddWithValue("@parcial", "%" + texto + "%");
-
-            using MySqlDataReader reader = comando.ExecuteReader();
-
-            while (reader.Read())
+            MySqlCommand comando = new MySqlCommand(String.Format("SELECT id, nombre, telefono, correo, activo, rol FROM usuarios WHERE id={0}", Id), conexion);
+            MySqlDataReader reader = comando.ExecuteReader();
+            while(reader.Read())
             {
-                Cliente cliente = new Cliente(
-                    reader.GetInt32(0),
-                    reader.GetString(1),
-                    reader.GetString(2),
-                    reader.GetString(3)
-                );
+                usuario.Id = reader.GetInt32(0);
+                usuario.Nombre = reader.GetString(1);
+                usuario.Telefono = reader.GetString(2);
+                usuario.Correo = reader.GetString(3);
+                usuario.Rol = reader.GetString(5);
 
-                lista.Add(cliente);
+            }
+            conexion.Close();
+            return usuario;
+
+        }
+        public static int Actualizar(Usuario usuario)
+        {
+            int resultado = 0;
+
+            MySqlConnection conexion = ConexionBD.CrearConexion();
+
+             MySqlCommand comando = new MySqlCommand(String.Format("UPDATE usuarios set nombre = '{0}', telefono = '{1}', correo = '{2}', rol = '{4}' WHERE id = {3}", usuario.Nombre, usuario.Telefono, usuario.Correo, usuario.Id, usuario.Rol    ), conexion);
+            resultado = comando.ExecuteNonQuery();
+            conexion.Close();
+            return resultado;
+
             }
 
-            return lista;
-        }
 
-        public static Cliente ObtenerCliente(int id)
+        public static int Eliminar(Usuario usuario)
         {
             using MySqlConnection conexion = ConexionBD.CrearConexion();
             using MySqlCommand comando = new MySqlCommand(
-                "SELECT id, nombre, telefono, correo, activo FROM clientes WHERE id = @id",
-                conexion);
+                "UPDATE usuarios SET activo = 0 WHERE id = @id", conexion);
 
-            comando.Parameters.AddWithValue("@id", id);
-
-            using MySqlDataReader reader = comando.ExecuteReader();
-
-            if (reader.Read())
-            {
-                return new Cliente(
-                    reader.GetInt32(0),
-                    reader.GetString(1),
-                    reader.GetString(2),
-                    reader.GetString(3)
-                );
-            }
-
-            return null;
-        }
-
-        public static int Actualizar(Cliente cliente)
-        {
-            using MySqlConnection conexion = ConexionBD.CrearConexion();
-            using MySqlCommand comando = new MySqlCommand(
-                "UPDATE clientes SET nombre = @nombre, telefono = @telefono, correo = @correo WHERE id = @id",
-                conexion);
-
-            comando.Parameters.AddWithValue("@nombre", cliente.Nombre);
-            comando.Parameters.AddWithValue("@telefono", cliente.Telefono);
-            comando.Parameters.AddWithValue("@correo", cliente.Correo);
-            comando.Parameters.AddWithValue("@id", cliente.Id);
+            comando.Parameters.Add("@id", MySqlDbType.Int32).Value = usuario.Id;
 
             return comando.ExecuteNonQuery();
-        }
 
-        public static int Eliminar(Cliente cliente)
-        {
-            using MySqlConnection conexion = ConexionBD.CrearConexion();
-            using MySqlCommand comando = new MySqlCommand(
-                "UPDATE clientes SET activo = 0 WHERE id = @id",
-                conexion);
-
-            comando.Parameters.Add("@id", MySqlDbType.Int32).Value = cliente.Id;
-
-            return comando.ExecuteNonQuery();
         }
     }
-}
+ }

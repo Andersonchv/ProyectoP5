@@ -725,5 +725,10 @@ namespace ProyectoP5
                 CambiarEstadoControles(true);
             }
         }
+
+        private void FrmVentas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

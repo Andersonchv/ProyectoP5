@@ -34,6 +34,7 @@
             button3 = new Button();
             label1 = new Label();
             dgvbuscar = new DataGridView();
+            button4 = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvbuscar).BeginInit();
             SuspendLayout();
             // 
@@ -46,19 +47,19 @@
             // 
             // button1
             // 
-            button1.Location = new Point(716, 67);
+            button1.Location = new Point(709, 54);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(82, 36);
             button1.TabIndex = 2;
-            button1.Text = "buscar ";
+            button1.Text = "Buscar";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // button2
             // 
-            button2.Location = new Point(111, 449);
+            button2.Location = new Point(22, 12);
             button2.Name = "button2";
-            button2.Size = new Size(211, 44);
+            button2.Size = new Size(86, 23);
             button2.TabIndex = 3;
             button2.Text = "Regresar";
             button2.UseVisualStyleBackColor = true;
@@ -93,11 +94,22 @@
             dgvbuscar.TabIndex = 6;
             dgvbuscar.CellClick += dgvbuscar_CellClick;
             // 
+            // button4
+            // 
+            button4.Location = new Point(129, 449);
+            button4.Name = "button4";
+            button4.Size = new Size(211, 44);
+            button4.TabIndex = 7;
+            button4.Text = "Limpiar";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
             // Eliminar_usuarios
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 505);
+            Controls.Add(button4);
             Controls.Add(dgvbuscar);
             Controls.Add(label1);
             Controls.Add(button3);
@@ -105,7 +117,9 @@
             Controls.Add(button1);
             Controls.Add(textBox1);
             Name = "Eliminar_usuarios";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Eliminar usuarios";
+            FormClosed += Eliminar_usuarios_FormClosed;
             Load += Eliminar_usuarios_Load;
             ((System.ComponentModel.ISupportInitialize)dgvbuscar).EndInit();
             ResumeLayout(false);
@@ -120,5 +134,6 @@
         private Button button3;
         private Label label1;
         private DataGridView dgvbuscar;
+        private Button button4;
     }
 }

@@ -1,6 +1,5 @@
-﻿using MySqlX.XDevAPI;
+﻿using ProyectoP5.Entidades;
 using ProyectoP5.Datos;
-using ProyectoP5.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ProyectoP5.Presentacion
 {
@@ -26,7 +26,7 @@ namespace ProyectoP5.Presentacion
         {
             Gestiondeusuarios gestiondeusuarios = new Gestiondeusuarios();
             gestiondeusuarios.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void Eliminar_usuarios_Load(object sender, EventArgs e)
@@ -62,9 +62,10 @@ namespace ProyectoP5.Presentacion
                 return;
             }
 
-            Cliente cliente = new Cliente(idSeleccionado, "", "", "");
+            Usuario usuario = new Usuario();
+            usuario.Id = idSeleccionado;
 
-            int resultado = Gestion_usuarios.Eliminar(cliente);
+            int resultado = Gestion_usuarios.Eliminar(usuario);
 
             if (resultado > 0)
             {
@@ -77,6 +78,17 @@ namespace ProyectoP5.Presentacion
             {
                 MessageBox.Show("No se pudo eliminar el usuario.");
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+            dgvbuscar.DataSource = Gestion_usuarios.Obtenertodos();
+        }
+
+        private void Eliminar_usuarios_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
