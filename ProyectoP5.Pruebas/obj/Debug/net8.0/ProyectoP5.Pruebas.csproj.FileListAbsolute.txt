@@ -9,3 +9,6 @@ C:\VSSolutions\ProyectoP5\ProyectoP5.Pruebas\obj\Debug\net8.0\ProyectoP5.Pruebas
 C:\VSSolutions\ProyectoP5\ProyectoP5.Pruebas\obj\Debug\net8.0\refint\ProyectoP5.Pruebas.dll
 C:\VSSolutions\ProyectoP5\ProyectoP5.Pruebas\obj\Debug\net8.0\ProyectoP5.Pruebas.pdb
 C:\VSSolutions\ProyectoP5\ProyectoP5.Pruebas\obj\Debug\net8.0\ref\ProyectoP5.Pruebas.dll
+C:\VSSolutions\ProyectoP5\ProyectoP5.Pruebas\bin\Debug\net8.0\.msCoverageSourceRootsMapping_ProyectoP5.Pruebas
+C:\VSSolutions\ProyectoP5\ProyectoP5.Pruebas\obj\Debug\net8.0\ProyectoP5.Pruebas.csproj.AssemblyReference.cache
+C:\VSSolutions\ProyectoP5\ProyectoP5.Pruebas\obj\Debug\net8.0\ProyectoP5.Pruebas.sourcelink.json

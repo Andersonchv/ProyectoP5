@@ -9,3 +9,5 @@ C:\VSSolutions\ProyectoP5\ProyectoP5.Negocio\obj\Debug\net8.0\ProyectoP5.Negocio
 C:\VSSolutions\ProyectoP5\ProyectoP5.Negocio\obj\Debug\net8.0\refint\ProyectoP5.Negocio.dll
 C:\VSSolutions\ProyectoP5\ProyectoP5.Negocio\obj\Debug\net8.0\ProyectoP5.Negocio.pdb
 C:\VSSolutions\ProyectoP5\ProyectoP5.Negocio\obj\Debug\net8.0\ref\ProyectoP5.Negocio.dll
+C:\VSSolutions\ProyectoP5\ProyectoP5.Negocio\obj\Debug\net8.0\ProyectoP5.Negocio.csproj.AssemblyReference.cache
+C:\VSSolutions\ProyectoP5\ProyectoP5.Negocio\obj\Debug\net8.0\ProyectoP5.Negocio.sourcelink.json

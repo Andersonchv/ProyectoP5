@@ -5,3 +5,11 @@ C:\VSSolutions\ProyectoP5\obj\Debug\net8.0-windows\ProyectoP5.Presentacion.Gener
 C:\VSSolutions\ProyectoP5\obj\Debug\net8.0-windows\ProyectoP5.Presentacion.AssemblyInfoInputs.cache
 C:\VSSolutions\ProyectoP5\obj\Debug\net8.0-windows\ProyectoP5.Presentacion.AssemblyInfo.cs
 C:\VSSolutions\ProyectoP5\obj\Debug\net8.0-windows\ProyectoP5.Presentacion.csproj.CoreCompileInputs.cache
+C:\VSSolutions\ProyectoP5\obj\Debug\net8.0-windows\ProyectoP5.Presentacion.Actualizar_usuario.resources
+C:\VSSolutions\ProyectoP5\obj\Debug\net8.0-windows\ProyectoP5.Presentacion.Consultar_usuario.resources
+C:\VSSolutions\ProyectoP5\obj\Debug\net8.0-windows\ProyectoP5.Presentacion.Eliminar_usuarios.resources
+C:\VSSolutions\ProyectoP5\obj\Debug\net8.0-windows\ProyectoP5.FrmHistorialVentas.resources
+C:\VSSolutions\ProyectoP5\obj\Debug\net8.0-windows\ProyectoP5.FrmVentas.resources
+C:\VSSolutions\ProyectoP5\obj\Debug\net8.0-windows\ProyectoP5.Presentacion.Gestiondeusuarios.resources
+C:\VSSolutions\ProyectoP5\obj\Debug\net8.0-windows\ProyectoP5.Presentacion.Registrodeusuarios.resources
+C:\VSSolutions\ProyectoP5\obj\Debug\net8.0-windows\ProyectoP5.Presentacion.sourcelink.json
