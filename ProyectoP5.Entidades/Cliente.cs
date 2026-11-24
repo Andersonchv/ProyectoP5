@@ -11,7 +11,16 @@ namespace ProyectoP5.Entidades
         public string Apellido { get; set; } = string.Empty;
         public int Edad { get; set; } = 0;
         public int Credito { get; set; } = 0;
-     
+
+        public Cliente()
+        {
+        }
+
+        public Cliente(string nombre, string telefono, string correo)
+            : base(nombre, telefono, correo, "Cliente")
+        {
+        }
+
         public Cliente(int id,string nombre,string apellido, string telefono, int edad, string correo, int Credito)
         {
             this.Id = id;

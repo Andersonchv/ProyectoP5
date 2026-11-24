@@ -11,3 +11,6 @@ C:\VSSolutions\ProyectoP5\ProyectoP5.Datos\obj\Debug\net8.0\refint\ProyectoP5.Da
 C:\VSSolutions\ProyectoP5\ProyectoP5.Datos\obj\Debug\net8.0\ProyectoP5.Datos.pdb
 C:\VSSolutions\ProyectoP5\ProyectoP5.Datos\obj\Debug\net8.0\ref\ProyectoP5.Datos.dll
 C:\VSSolutions\ProyectoP5\ProyectoP5.Datos\obj\Debug\net8.0\ProyectoP5.Datos.sourcelink.json
+C:\VSSolutions\ProyectoP5\ProyectoP5.Datos\bin\Debug\net8.0\ProyectoP5.Entidades.dll
+C:\VSSolutions\ProyectoP5\ProyectoP5.Datos\bin\Debug\net8.0\ProyectoP5.Entidades.pdb
+C:\VSSolutions\ProyectoP5\ProyectoP5.Datos\obj\Debug\net8.0\Proyecto.3879D020.Up2Date
