@@ -1,9 +1,9 @@
 ﻿
-using ProyectoP5.Datos;
-using MySql.Data.MySqlClient;
+using ProyectoP5.Entidades;
+using MySqlConnector;
 
 
-namespace ProyectoP5.Entidades
+namespace ProyectoP5.Datos
 {
     public class Gestion_usuarios
     {
@@ -87,10 +87,10 @@ namespace ProyectoP5.Entidades
 
             return lista;
         }
-        public static Usuario ObtenerUsuario(int Id)
+        public static Cliente ObtenerCliente(int Id)
         {
-            Usuario usuario = new Usuario();
-            MySqlConnection conexion = ConexionBD.CrearConexion(); 
+            Cliente usuario = new Cliente();
+            MySqlConnection conexion = ConexionBD.CrearConexion();
 
             MySqlCommand comando = new MySqlCommand(String.Format("SELECT id, nombre, telefono, correo, activo, rol FROM usuarios WHERE id={0}", Id), conexion);
             MySqlDataReader reader = comando.ExecuteReader();

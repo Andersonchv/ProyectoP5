@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProyectoP5.Datos;
 using ProyectoP5.Entidades;
 
 namespace ProyectoP5.Presentacion

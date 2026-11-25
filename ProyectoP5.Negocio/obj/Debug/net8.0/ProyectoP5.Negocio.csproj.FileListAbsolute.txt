@@ -9,3 +9,10 @@ C:\VSSolutions\ProyectoP5\ProyectoP5.Negocio\obj\Debug\net8.0\ProyectoP5.Negocio
 C:\VSSolutions\ProyectoP5\ProyectoP5.Negocio\obj\Debug\net8.0\refint\ProyectoP5.Negocio.dll
 C:\VSSolutions\ProyectoP5\ProyectoP5.Negocio\obj\Debug\net8.0\ProyectoP5.Negocio.pdb
 C:\VSSolutions\ProyectoP5\ProyectoP5.Negocio\obj\Debug\net8.0\ref\ProyectoP5.Negocio.dll
+C:\VSSolutions\ProyectoP5\ProyectoP5.Negocio\obj\Debug\net8.0\ProyectoP5.Negocio.csproj.AssemblyReference.cache
+C:\VSSolutions\ProyectoP5\ProyectoP5.Negocio\obj\Debug\net8.0\ProyectoP5.Negocio.sourcelink.json
+C:\VSSolutions\ProyectoP5\ProyectoP5.Negocio\bin\Debug\net8.0\ProyectoP5.Datos.dll
+C:\VSSolutions\ProyectoP5\ProyectoP5.Negocio\bin\Debug\net8.0\ProyectoP5.Entidades.dll
+C:\VSSolutions\ProyectoP5\ProyectoP5.Negocio\bin\Debug\net8.0\ProyectoP5.Datos.pdb
+C:\VSSolutions\ProyectoP5\ProyectoP5.Negocio\bin\Debug\net8.0\ProyectoP5.Entidades.pdb
+C:\VSSolutions\ProyectoP5\ProyectoP5.Negocio\obj\Debug\net8.0\Proyecto.EDA8B52A.Up2Date

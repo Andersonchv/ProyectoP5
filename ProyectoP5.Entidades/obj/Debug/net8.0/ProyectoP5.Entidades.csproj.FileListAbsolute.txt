@@ -2,3 +2,12 @@ C:\VSSolutions\ProyectoP5\ProyectoP5.Entidades\obj\Debug\net8.0\ProyectoP5.Entid
 C:\VSSolutions\ProyectoP5\ProyectoP5.Entidades\obj\Debug\net8.0\ProyectoP5.Entidades.AssemblyInfoInputs.cache
 C:\VSSolutions\ProyectoP5\ProyectoP5.Entidades\obj\Debug\net8.0\ProyectoP5.Entidades.AssemblyInfo.cs
 C:\VSSolutions\ProyectoP5\ProyectoP5.Entidades\obj\Debug\net8.0\ProyectoP5.Entidades.csproj.CoreCompileInputs.cache
+C:\VSSolutions\ProyectoP5\ProyectoP5.Entidades\obj\Debug\net8.0\ProyectoP5.Entidades.sourcelink.json
+C:\VSSolutions\ProyectoP5\ProyectoP5.Entidades\bin\Debug\net8.0\ProyectoP5.Entidades.deps.json
+C:\VSSolutions\ProyectoP5\ProyectoP5.Entidades\bin\Debug\net8.0\ProyectoP5.Entidades.dll
+C:\VSSolutions\ProyectoP5\ProyectoP5.Entidades\bin\Debug\net8.0\ProyectoP5.Entidades.pdb
+C:\VSSolutions\ProyectoP5\ProyectoP5.Entidades\obj\Debug\net8.0\ProyectoP5.Entidades.dll
+C:\VSSolutions\ProyectoP5\ProyectoP5.Entidades\obj\Debug\net8.0\refint\ProyectoP5.Entidades.dll
+C:\VSSolutions\ProyectoP5\ProyectoP5.Entidades\obj\Debug\net8.0\ProyectoP5.Entidades.pdb
+C:\VSSolutions\ProyectoP5\ProyectoP5.Entidades\obj\Debug\net8.0\ref\ProyectoP5.Entidades.dll
+C:\VSSolutions\ProyectoP5\ProyectoP5.Entidades\obj\Debug\net8.0\Proyecto.FED38D5F.Up2Date

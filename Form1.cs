@@ -8,6 +8,35 @@ namespace ProyectoP5
         public Form1()
         {
             InitializeComponent();
+
+            CrearBotonReportes(); /// Inicializar el boton Reportes
+        }
+
+        /// <summary>
+        /// Crear Boton Reportes
+        /// </summary>
+        private void CrearBotonReportes()
+        {
+            Button btnReportes = new Button
+            {
+                Name = "btnReportes",
+                Text = "Reportes de ventas",
+                Location = new Point(550, 148),
+                Size = new Size(153, 89),
+                BackColor = Color.FromArgb(40, 100, 180),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Flat
+            };
+
+            btnReportes.Click += (sender, e) =>
+            {
+                using (FrmReportes formulario = new FrmReportes())
+                {
+                    formulario.ShowDialog();
+                }
+            };
+
+            Controls.Add(btnReportes);
         }
 
         private void Form1_Load(object sender, EventArgs e)

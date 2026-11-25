@@ -216,23 +216,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ander\\.nuget\\packages\\": {},
+    "C:\\Users\\Usuario\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ander\\Documents\\ProyectoP5\\ProyectoP5.Datos\\ProyectoP5.Datos.csproj",
+      "projectUniqueName": "C:\\VSSolutions\\ProyectoP5\\ProyectoP5.Datos\\ProyectoP5.Datos.csproj",
       "projectName": "ProyectoP5.Datos",
-      "projectPath": "C:\\Users\\ander\\Documents\\ProyectoP5\\ProyectoP5.Datos\\ProyectoP5.Datos.csproj",
-      "packagesPath": "C:\\Users\\ander\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ander\\Documents\\ProyectoP5\\ProyectoP5.Datos\\obj\\",
+      "projectPath": "C:\\VSSolutions\\ProyectoP5\\ProyectoP5.Datos\\ProyectoP5.Datos.csproj",
+      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+      "outputPath": "C:\\VSSolutions\\ProyectoP5\\ProyectoP5.Datos\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\ander\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -241,6 +241,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -248,8 +249,8 @@
           "framework": "net8.0",
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\ander\\Documents\\ProyectoP5\\ProyectoP5.Entidades\\ProyectoP5.Entidades.csproj": {
-              "projectPath": "C:\\Users\\ander\\Documents\\ProyectoP5\\ProyectoP5.Entidades\\ProyectoP5.Entidades.csproj"
+            "C:\\VSSolutions\\ProyectoP5\\ProyectoP5.Entidades\\ProyectoP5.Entidades.csproj": {
+              "projectPath": "C:\\VSSolutions\\ProyectoP5\\ProyectoP5.Entidades\\ProyectoP5.Entidades.csproj"
             }
           }
         }
@@ -264,7 +265,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "10.0.400"
+      "SdkAnalysisLevel": "11.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -292,7 +293,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.404/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\11.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
