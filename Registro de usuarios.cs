@@ -27,7 +27,8 @@ namespace ProyectoP5.Presentacion
         private void button1_Click(object sender, EventArgs e)
         {
             Gestiondeusuarios Gestiondeusuarios = new Gestiondeusuarios();
-            this.Close();
+            Gestiondeusuarios.Show();
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)

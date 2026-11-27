@@ -25,35 +25,35 @@ namespace ProyectoP5.Presentacion
         {
             Registrodeusuarios form2 = new Registrodeusuarios();
             form2.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             Consultar_usuario consultar_usuario = new Consultar_usuario();
             consultar_usuario.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             Actualizar_usuario actualizar_usuario = new Actualizar_usuario();
             actualizar_usuario.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Eliminar_usuarios eliminar_usuarios = new Eliminar_usuarios();
             eliminar_usuarios.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             FrmMenuPrincipal menu_principal = new FrmMenuPrincipal();
             menu_principal.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void Gestiondeusuarios_FormClosed(object sender, FormClosedEventArgs e)

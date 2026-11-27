@@ -450,5 +450,10 @@ namespace ProyectoP5
                     .DefaultCellStyle.Format = "N2";
             }
         }
+
+        private void FrmHistorialVentas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

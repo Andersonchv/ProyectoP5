@@ -26,7 +26,7 @@ namespace ProyectoP5.Presentacion
         {
             Gestiondeusuarios gestiondeusuarios = new Gestiondeusuarios();
             gestiondeusuarios.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void Eliminar_usuarios_Load(object sender, EventArgs e)

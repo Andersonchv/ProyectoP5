@@ -28,10 +28,13 @@ namespace ProyectoP5
         private void InitializeComponent()
         {
             SuspendLayout();
-
+            // 
+            // FrmHistorialVentas
+            // 
+            ClientSize = new Size(284, 261);
             Name = "FrmHistorialVentas";
             Text = "Historial de Ventas";
-
+            Load += FrmHistorialVentas_Load;
             ResumeLayout(false);
         }
     }

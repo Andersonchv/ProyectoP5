@@ -38,18 +38,19 @@
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.Location = new Point(370, 24);
+            lblTitulo.Location = new Point(324, 18);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(272, 41);
+            lblTitulo.Size = new Size(219, 32);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Sistema de Ventas";
             // 
             // btnProductos
             // 
             btnProductos.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnProductos.Location = new Point(159, 245);
+            btnProductos.Location = new Point(139, 184);
+            btnProductos.Margin = new Padding(3, 2, 3, 2);
             btnProductos.Name = "btnProductos";
-            btnProductos.Size = new Size(160, 55);
+            btnProductos.Size = new Size(140, 41);
             btnProductos.TabIndex = 1;
             btnProductos.Text = "Productos";
             btnProductos.UseVisualStyleBackColor = true;
@@ -58,9 +59,10 @@
             // btnVentas
             // 
             btnVentas.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnVentas.Location = new Point(447, 245);
+            btnVentas.Location = new Point(391, 184);
+            btnVentas.Margin = new Padding(3, 2, 3, 2);
             btnVentas.Name = "btnVentas";
-            btnVentas.Size = new Size(160, 55);
+            btnVentas.Size = new Size(140, 41);
             btnVentas.TabIndex = 2;
             btnVentas.Text = "Ventas";
             btnVentas.UseVisualStyleBackColor = true;
@@ -69,9 +71,10 @@
             // btnUsuarios
             // 
             btnUsuarios.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnUsuarios.Location = new Point(747, 245);
+            btnUsuarios.Location = new Point(654, 184);
+            btnUsuarios.Margin = new Padding(3, 2, 3, 2);
             btnUsuarios.Name = "btnUsuarios";
-            btnUsuarios.Size = new Size(160, 55);
+            btnUsuarios.Size = new Size(140, 41);
             btnUsuarios.TabIndex = 3;
             btnUsuarios.Text = "Usuarios";
             btnUsuarios.UseVisualStyleBackColor = true;
@@ -79,17 +82,19 @@
             // 
             // FrmMenuPrincipal
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1080, 579);
+            ClientSize = new Size(945, 434);
             Controls.Add(btnUsuarios);
             Controls.Add(btnVentas);
             Controls.Add(btnProductos);
             Controls.Add(lblTitulo);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FrmMenuPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema de Ventas";
             WindowState = FormWindowState.Maximized;
+            Load += FrmMenuPrincipal_Load;
             ResumeLayout(false);
             PerformLayout();
         }

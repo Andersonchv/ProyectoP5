@@ -28,7 +28,7 @@ namespace ProyectoP5.Presentacion
         {
             Gestiondeusuarios gestiondeusuarios = new Gestiondeusuarios();
             gestiondeusuarios.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
