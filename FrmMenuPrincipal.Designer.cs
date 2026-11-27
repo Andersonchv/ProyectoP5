@@ -32,6 +32,7 @@
             btnProductos = new Button();
             btnVentas = new Button();
             btnUsuarios = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // lblTitulo
@@ -59,7 +60,7 @@
             // btnVentas
             // 
             btnVentas.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnVentas.Location = new Point(391, 184);
+            btnVentas.Location = new Point(324, 184);
             btnVentas.Margin = new Padding(3, 2, 3, 2);
             btnVentas.Name = "btnVentas";
             btnVentas.Size = new Size(140, 41);
@@ -71,7 +72,7 @@
             // btnUsuarios
             // 
             btnUsuarios.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnUsuarios.Location = new Point(654, 184);
+            btnUsuarios.Location = new Point(503, 184);
             btnUsuarios.Margin = new Padding(3, 2, 3, 2);
             btnUsuarios.Name = "btnUsuarios";
             btnUsuarios.Size = new Size(140, 41);
@@ -80,11 +81,23 @@
             btnUsuarios.UseVisualStyleBackColor = true;
             btnUsuarios.Click += btnUsuarios_Click;
             // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            button1.Location = new Point(682, 184);
+            button1.Name = "button1";
+            button1.Size = new Size(140, 41);
+            button1.TabIndex = 4;
+            button1.Text = "Reportes ";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // FrmMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(945, 434);
+            Controls.Add(button1);
             Controls.Add(btnUsuarios);
             Controls.Add(btnVentas);
             Controls.Add(btnProductos);
@@ -105,5 +118,6 @@
         private Button btnProductos;
         private Button btnVentas;
         private Button btnUsuarios;
+        private Button button1;
     }
 }

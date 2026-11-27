@@ -42,5 +42,12 @@ namespace ProyectoP5.Presentacion
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmReportes reportes = new FrmReportes();
+            reportes.Show();
+            this.Hide();
+        }
     }
 }
